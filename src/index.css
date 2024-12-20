@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --toast-bg: #ffffff;
+    --toast-color: #1f2937;
+    --toast-success-bg: #dcfce7;
+    --toast-success-color: #166534;
+    --toast-error-bg: #fee2e2;
+    --toast-error-color: #991b1b;
+  }
+
+  .dark {
+    --toast-bg: #1f2937;
+    --toast-color: #f3f4f6;
+    --toast-success-bg: #065f46;
+    --toast-success-color: #d1fae5;
+    --toast-error-bg: #7f1d1d;
+    --toast-error-color: #fee2e2;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+
+  /* Improve input and select styling */
+  input, select, textarea {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white;
+  }
+
+  /* Enhance button text contrast */
+  button {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  /* Improve heading contrast */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 dark:text-white font-semibold;
+  }
+
+  /* Better paragraph readability */
+  p {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  /* Card styling improvements */
+  .card {
+    @apply bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow rounded-lg;
+  }
+
+  /* Status colors */
+  .status-pending {
+    @apply bg-red-100 dark:bg-red-900/50 text-red-900 dark:text-red-100;
+  }
+  
+  .status-preparing {
+    @apply bg-blue-100 dark:bg-blue-900/50 text-blue-900 dark:text-blue-100;
+  }
+  
+  .status-ready {
+    @apply bg-orange-100 dark:bg-orange-900/50 text-orange-900 dark:text-orange-100;
+  }
+  
+  .status-delivered {
+    @apply bg-green-100 dark:bg-green-900/50 text-green-900 dark:text-green-100;
+  }
+
+  /* Form field focus states */
+  input:focus, select:focus, textarea:focus {
+    @apply ring-2 ring-blue-500 dark:ring-blue-400 outline-none;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+  }
+}
+
+/* Animation classes */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.5s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
